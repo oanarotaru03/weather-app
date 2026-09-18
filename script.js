@@ -30,7 +30,7 @@ async function getWeather() {
 
     const temp = weatherData.current_weather.temperature;
 
-    result.textContent = cityName + ": " + temp + "°C";
+    result.textContent = `${cityName}: ${temp}°C`;
 }
 
 searchBtn.addEventListener("click", getWeather);
