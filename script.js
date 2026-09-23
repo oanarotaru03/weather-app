@@ -30,7 +30,10 @@ async function getWeather() {
 
     const temp = weatherData.current_weather.temperature;
 
-    result.textContent = `${cityName}: ${temp}°C`;
+   const today = new Date();
+const dateString = today.toLocaleDateString();
+result.textContent = `${cityName}: ${temp}°C (as of ${dateString})`;
+
 }
 
 searchBtn.addEventListener("click", getWeather);
