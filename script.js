@@ -20,9 +20,7 @@ async function getWeather() {
         return;
     }
 
-    const lat = geoData.results[0].latitude;
-    const lon = geoData.results[0].longitude;
-    const cityName = geoData.results[0].name;
+const { latitude: lat, longitude: lon, name: cityName } = geoData.results[0];
 
     const weatherUrl = "https://api.open-meteo.com/v1/forecast?latitude=" + lat + "&longitude=" + lon + "&current_weather=true";
     const weatherResponse = await fetch(weatherUrl);
